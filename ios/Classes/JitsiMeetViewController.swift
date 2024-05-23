@@ -67,6 +67,10 @@ class JitsiMeetViewController: UIViewController {
 extension JitsiMeetViewController: JitsiMeetViewDelegate {
     func conferenceJoined(_ data: [AnyHashable : Any]) {
         self.eventSink(["event": "conferenceJoined", "data": data])
+
+        if let appDelegate = UIApplication.shared.delegate as? JitsiMeetAppDelegate {
+            appDelegate.onConferenceJoined()
+        }
     }
 
     func conferenceTerminated(_ data: [AnyHashable: Any]) {
@@ -128,6 +132,10 @@ extension JitsiMeetViewController: JitsiMeetViewDelegate {
             self.pipViewCoordinator?.enterPictureInPicture()
         }
     }
+}
+
+public protocol JitsiMeetAppDelegate : NSObjectProtocol {
+    func onConferenceJoined()
 }
 
 class WrapperView: UIView {
