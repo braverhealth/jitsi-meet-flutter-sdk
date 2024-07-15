@@ -22,6 +22,10 @@ class FeatureFlags{
   /// Default: enabled (true).
   static const String audioOnlyButtonEnabled = "audio-only.enabled";
 
+  /// FeatureFlags [breakoutRoomsEnabled] : Flag indicating that the breakout rooms feature should be enabled.
+  /// Default: enabled (true).
+  static const String breakoutRoomsEnabled = "breakout-rooms.enabled";
+
   /// FeatureFlags [calenderEnabled] : Flag indicating if calendar integration should be enabled.
   /// Default: enabled (true) on Android, auto-detected on iOS.
   static const String calenderEnabled = "calendar.enabled";
